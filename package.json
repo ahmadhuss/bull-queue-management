@@ -1,0 +1,29 @@
+{
+  "name": "bull-queue-management",
+  "version": "1.0.0",
+  "description": "A queue management using Node.js with Bull and Redis DB server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -L app.js"
+  },
+  "dependencies": {
+    "@bull-board/api": "^3.11.1",
+    "@bull-board/express": "^3.11.1",
+    "bull": "^4.8.3",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadhuss/bull-queue-management.git"
+  },
+  "keywords": [],
+  "author": "'ahmadhuss <'ahmadhussnain787@gmail.com'>",
+  "license": "'MIT'",
+  "bugs": {
+    "url": "https://github.com/ahmadhuss/bull-queue-management/issues"
+  },
+  "homepage": "https://github.com/ahmadhuss/bull-queue-management#readme"
+}
