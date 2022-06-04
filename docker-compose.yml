@@ -1,0 +1,36 @@
+version: '3.9'
+
+# services represent our containers
+services:
+  # service name redis_db
+  redis_db:
+    container_name: redis_db_server
+    # Install the latest redis image
+    image: redis
+    # restart policy, if container stops then restart
+    restart: always
+    # Map redis port of our local machine 6379 to our docker image container 6379
+    ports:
+      - 6379:6379
+
+  # second service will be our main Node.js app
+  node_app:
+    container_name: node_app
+    # Create the image of the Dockerfile that resides in current directory for this
+    #  we will instead use build and provide path  of the current directory where
+    # Dockerfile is placed
+    build: .
+    # Map Node app port of our local machine 3000 to our node image container 3000
+    ports:
+      - 3000:3000
+      # Map this directory to our docker containers, so during change in any
+      # in this directory will map to where our docker containers reside
+    volumes:
+      - .:/usr/src/app
+    # This Node app needs some environment variable, it will
+    # be our above service Redis DB server i.e. redis_db:6379
+    environment:
+      REDIS_URL: redis_db:6379
+    # This container depends upon service name redis_db
+    depends_on:
+      - redis_db
