@@ -40,18 +40,18 @@ docker ps -a
 
 ***Remove the  Docker container:***
 ```
-docker rm containerId
+docker rm "containerId"
 ```
 
 
 ***Check logs of Docker container:***
 ```
-docker logs containerId
+docker logs "containerId"
 ```
 
 ***Access Shell of Docker container:***
 ```
-docker exec -it containerId /bin/bash
+docker exec -it "containerId" /bin/bash
 ```
 
 ***Check Docker container current working directory:***
