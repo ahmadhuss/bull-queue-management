@@ -84,9 +84,7 @@ It will not show any output in the console.
 docker compose build
 ```
 
-
 ***Stop all the Docker compose file containers:***
-
 ```
 docker compose down
 ```
