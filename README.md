@@ -86,6 +86,7 @@ docker compose build
 
 
 ***Stop all the Docker compose file containers:***
+
 ```
 docker compose down
 ```
