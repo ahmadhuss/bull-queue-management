@@ -8,7 +8,9 @@ const sleep = require('./functions');
 
 // Setup Queue
 const queue = new Queue('manager', 'redis://redis_db:6379');
-// Queue Process
+
+// Queuing process, make sure the worker always has a new function reference
+// when adding a large number of jobs.
 queue.process(async function(job, done) {
     try {
         console.log(`Received Job! with id ${job?.id}`);
