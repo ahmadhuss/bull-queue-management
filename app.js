@@ -15,9 +15,12 @@ queue.process(async function(job, done) {
     try {
         console.log(`Received Job! with id ${job?.id}`);
         await sleep(10000);
+        // Make sure to always exit the function if there
+        // is a code below the `done()` function
         done(null, 'success');
     } catch (error) {
         done(null, error);
+
     }
 });
 
